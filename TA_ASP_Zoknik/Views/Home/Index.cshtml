@@ -1,0 +1,23 @@
+﻿@model List<TA_ASP_Zoknik.Models.Zokni>
+
+@{ 
+    var likeCount = 0;
+    var stockCount = 0;
+    foreach (var zokni in Model)
+    {
+        likeCount += zokni.Like;
+        stockCount += zokni.Keszlet;
+    }
+
+
+}
+<div class="fooldal">
+
+
+    <h2>Alkalmi zoknira van szükséged?</h2>
+    <h1>Mi segítünk!</h1>
+    <h3>Válassz @stockCount zoknink közül, @likeCount vásárló nem tévedhet! ;)</h3>
+
+
+
+</div>

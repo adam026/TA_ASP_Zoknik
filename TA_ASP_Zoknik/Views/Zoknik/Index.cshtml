@@ -1,0 +1,25 @@
+﻿@model IEnumerable<TA_ASP_Zoknik.Models.Zokni>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var zokni in Model)
+    {
+        <div class="col">
+            <div class="card">
+                <h3 class="card-header">@zokni.Tipus</h3>
+                <img src="~/Content/IMGS/@zokni.Kep" />
+                <div class="card-body">
+                    <p class="card-text">A zokni adatai</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Készleten: @zokni.Keszlet</li>
+                    <li class="list-group-item">Like: @zokni.Like</li>
+                    <li class="list-group-item">Dislike: @zokni.Dislike</li>
+                </ul>
+                <div class="card-body">
+                    <button class="btn btn-secondary" onclick="location.href='@Url.Action("Like", "Zoknik", new { id = zokni.Id })'">Like</button>
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Dislike", "Zoknik", new { id = zokni.Id })'">Dislike</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<TA_ASP_Zoknik.Models.Kolcsonzo>
+
+<h2>Kölcsönzők</h2>
+<hr />
+<button class="btn btn-secondary">@Html.ActionLink("Új kölcsönző", "New", "Kolcsonzok")</button>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>E-mail cím</th>
+            <th>Kölcsönzések száma</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kolcsonzo in Model)
+        {
+            <tr>
+                <td>@kolcsonzo.Nev</td>
+                <td>@kolcsonzo.Email</td>
+                <td>@kolcsonzo.NoKolcsonzes</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

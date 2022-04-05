@@ -1,0 +1,29 @@
+﻿@model TA_ASP_Zoknik.Models.Kolcsonzo
+
+<h2>Új kölcsönző</h2>
+
+@using (Html.BeginForm("Save", "Kolcsonzok"))
+{
+    <div class="form-group">
+        @Html.LabelFor(k => k.Nev)
+        @Html.TextBoxFor(k => k.Nev, new { @class = "form-control" })
+        @Html.ValidationMessageFor(k => k.Nev)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(k => k.Email)
+        @Html.TextBoxFor(k => k.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(k => k.Email)
+    </div>
+
+    @Html.HiddenFor(k => k.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Mentés</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
